@@ -33,7 +33,7 @@ int main(){
 
     cout << "Shkruaj numrin e dyt: ";
     cin >> numri2;
-
+  perserit:
   switch(operatori) {
         case '+':
             cout << numri1 << " + " << numri2 << " = " << shuma(a,b) << endl;
@@ -48,7 +48,9 @@ int main(){
             cout << numri1 << " / " << numri2 << " = " << hersi(a,b);
             break;
         default:
-            cout << "Operatori eshte gabim" << endl;
+            cout << "Operatori eshte gabim, sheno perseri:" << endl;
+          cin>> operatori;
+          goto perserit;
             break;
     }
     return 0; 
