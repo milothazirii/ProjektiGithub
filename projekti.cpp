@@ -1,4 +1,4 @@
-#include <iostream> //nuk funksionon? - Gert
+#include <iostream> 
 
 using namespace std;
 
@@ -23,5 +23,15 @@ double hersi(int a,int b){ //ndoshta duhet nderrimi i emrave te variablabe? - Ge
 int main(){
     double numri1;
     double numri2;
+    char operatori;
+  
+    cout << "Shkruaj numrin e par: ";
+    cin >> numri1;
+
+    cout << "Sheno njerin nga keto operatoret (+, -, *, /): ";
+    cin >> operatori;
+
+    cout << "Shkruaj numrin e dyt: ";
+    cin >> numri2;
     return 0; 
 }
