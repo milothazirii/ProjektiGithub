@@ -33,5 +33,23 @@ int main(){
 
     cout << "Shkruaj numrin e dyt: ";
     cin >> numri2;
+
+  switch(operatori) {
+        case '+':
+            cout << numri1 << " + " << numri2 << " = " << shuma(a,b) << endl;
+            break;
+        case '-':
+            cout << numri1 << " - " << numri2 << " = " << zbritja(a,b) << endl;
+            break;
+        case '*':
+            cout << numri1 << " * " << numri2 << " = " << prodhimi(a,b) << endl;
+            break;
+        case '/':
+            cout << numri1 << " / " << numri2 << " = " << hersi(a,b);
+            break;
+        default:
+            cout << "Operatori eshte gabim" << endl;
+            break;
+    }
     return 0; 
 }
