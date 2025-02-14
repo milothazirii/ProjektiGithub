@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 double shuma(double a, double b) {
@@ -22,6 +23,14 @@ double hersi(double a, double b) {
     }
 }
 
+double rrenje(double a) {
+    if (a < 0) {
+        cout << "Gabim! Nuk mund të marresh rrënjë nga një numër negativ." << endl;
+        return -1;
+    }
+    return sqrt(a);
+}
+
 int main() {
     double numri1, numri2, numriaktual = 0;
     char Pergjigja = 'N';
@@ -36,40 +45,47 @@ int main() {
             cout << "Vazhdoni me rezultatin e meparshem: " << numriaktual << endl;
         }
 
-        cout << "Sheno nje nga keto operatoret (+, -, *, /): ";
+        cout << "Sheno nje nga keto operatoret (+, -, *, /, r): ";
         cin >> operatori;
 
-        cout << "Shkruaj numrin e dyte: ";
-        cin >> numri2;
+        if (operatori == 'r') {
+            numriaktual = rrenje(numri1);
+            if (numriaktual != -1) {
+                cout << "Rrënja katrore e " << numri1 << " është " << numriaktual << endl;
+            }
+        } else {
+            cout << "Shkruaj numrin e dyte: ";
+            cin >> numri2;
 
-        switch (operatori) {
-            case '+':
-                numriaktual = shuma(numri1, numri2);
-                cout << numri1 << " + " << numri2 << " = " << numriaktual << endl;
-                break;
-            case '-':
-                numriaktual = zbritja(numri1, numri2);
-                cout << numri1 << " - " << numri2 << " = " << numriaktual << endl;
-                break;
-            case '*':
-                numriaktual = prodhimi(numri1, numri2);
-                cout << numri1 << " * " << numri2 << " = " << numriaktual << endl;
-                break;
-            case '/':
-                numriaktual = hersi(numri1, numri2);
-                if (numriaktual != 0) {
-                    cout << numri1 << " / " << numri2 << " = " << numriaktual << endl;
-                }
-                break;
-            default:
-                cout << "Operatori është gabim, sheno përsëri:" << endl;
-                continue;
+            switch (operatori) {
+                case '+':
+                    numriaktual = shuma(numri1, numri2);
+                    cout << numri1 << " + " << numri2 << " = " << numriaktual << endl;
+                    break;
+                case '-':
+                    numriaktual = zbritja(numri1, numri2);
+                    cout << numri1 << " - " << numri2 << " = " << numriaktual << endl;
+                    break;
+                case '*':
+                    numriaktual = prodhimi(numri1, numri2);
+                    cout << numri1 << " * " << numri2 << " = " << numriaktual << endl;
+                    break;
+                case '/':
+                    numriaktual = hersi(numri1, numri2);
+                    if (numriaktual != 0) {
+                        cout << numri1 << " / " << numri2 << " = " << numriaktual << endl;
+                    }
+                    break;
+                default:
+                    cout << "Operatori është gabim, sheno përsëri:" << endl;
+                    continue;
+            }
         }
 
-        cout << "Deshironi te vazhdoni me kete numer? (Y/N): ";
+        cout << "Deshironi te vazhdoni me kete numer? (P/J): ";
         cin >> Pergjigja;
 
-    } while (Pergjigja == 'Y' || Pergjigja == 'y');
+    } while (Pergjigja == 'P' || Pergjigja == 'p');
 
     cout << "Faleminderit per perdorimin!" << endl;
 
